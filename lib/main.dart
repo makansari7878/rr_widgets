@@ -29,6 +29,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'DataTableWid.dart';
 
 import 'DropDown.dart';
+import 'GraphWidget.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('WebView Example'),
         ),
-        body: DataTableWid(),
+        body: BarGraphApp(),
       ),
     );
   }
