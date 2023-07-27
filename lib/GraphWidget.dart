@@ -16,6 +16,7 @@ class BarGraphApp extends StatelessWidget {
 class BarGraphScreen extends StatelessWidget {
   final List<double> data = [5, 10, 15, 20, 25, 30]; // Replace with your data values
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +52,11 @@ class BarGraphScreen extends StatelessWidget {
           ),
         ),
       ),
+
+
+
+
     );
+
   }
 }

@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('WebView Example'),
         ),
-        body: BarGraphApp(),
+        body: DataTableWid(),
       ),
     );
   }

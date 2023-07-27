@@ -1,3 +1,4 @@
+import 'package:demo_widgets/SnackBarWid.dart';
 import 'package:flutter/material.dart';
 
 class DataTableWid extends StatefulWidget {
@@ -8,6 +9,19 @@ class DataTableWid extends StatefulWidget {
 }
 
 class _DataTableWidState extends State<DataTableWid> {
+  int myCurrentIndex = 0;
+  void _onItemTapped(int index) {
+    setState(() {
+      myCurrentIndex = index;
+      if(index == 1){
+        myCurrentIndex = 0;
+        Navigator.push(context, MaterialPageRoute(builder: (context){
+          return SnackBarWid();
+        }));
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +65,34 @@ class _DataTableWidState extends State<DataTableWid> {
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: myCurrentIndex,
+        iconSize: 30,
+        selectedFontSize: 20,
+
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              backgroundColor: Colors.cyan,
+              label: "Home"
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              backgroundColor: Colors.cyan,
+              label: "Search"
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.security),
+              backgroundColor: Colors.cyan,
+              label: "security"
+          ),
+        ],
+          type: BottomNavigationBarType.shifting,
+          selectedItemColor: Colors.black,
+          onTap: _onItemTapped,
+          elevation: 5
+      ),
+
     );
   }
 }
